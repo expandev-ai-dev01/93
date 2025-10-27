@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as productController from '@/api/v1/internal/product/controller';
 
 const router = Router();
 
@@ -13,7 +14,9 @@ const router = Router();
  * These routes are protected and require authentication middleware.
  */
 
-// Authenticated routes will be added here as features are implemented
-// Example: router.use('/products', productRoutes);
+// Product management routes - /api/v1/internal/product
+router.post('/product', productController.postHandler);
+router.put('/product/:id', productController.putHandler);
+router.delete('/product/:id', productController.deleteHandler);
 
 export default router;

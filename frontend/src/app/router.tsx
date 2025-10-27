@@ -4,6 +4,8 @@ import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 import { RootLayout } from '@/pages/layouts/RootLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const CatalogPage = lazy(() => import('@/pages/Catalog'));
+const ProductDetailPage = lazy(() => import('@/pages/ProductDetail'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -21,6 +23,22 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'catalog',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <CatalogPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'catalog/:id',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProductDetailPage />
           </Suspense>
         ),
       },

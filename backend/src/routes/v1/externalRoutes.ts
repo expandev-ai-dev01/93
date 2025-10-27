@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as productController from '@/api/v1/external/product/controller';
 
 const router = Router();
 
@@ -13,7 +14,9 @@ const router = Router();
  * These routes are accessible without credentials.
  */
 
-// Public routes will be added here as features are implemented
-// Example: router.use('/public', publicRoutes);
+// Product routes - /api/v1/external/product
+router.get('/product', productController.listHandler);
+router.get('/product/search', productController.searchHandler);
+router.get('/product/:id', productController.getHandler);
 
 export default router;
