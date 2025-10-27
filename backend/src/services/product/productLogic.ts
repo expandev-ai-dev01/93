@@ -19,8 +19,54 @@ import {
  * Implements all CRUD operations and search functionality.
  */
 
-// In-memory storage
-const products: ProductEntity[] = [];
+// In-memory storage with initial products
+const products: ProductEntity[] = [
+  {
+    id: uuidv4(),
+    name: 'Brigadeiro Gourmet',
+    description:
+      'Delicioso brigadeiro artesanal feito com chocolate belga de alta qualidade. Perfeito para festas e eventos especiais.',
+    ingredients: 'Leite condensado, chocolate belga, manteiga, granulado premium',
+    price: 2.5,
+    images: [
+      'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=80',
+      'https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80',
+    ],
+    available: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: uuidv4(),
+    name: 'Beijinho de Coco',
+    description:
+      'Tradicional beijinho brasileiro com cobertura de coco ralado. Sabor suave e textura cremosa que derrete na boca.',
+    ingredients: 'Leite condensado, coco ralado, manteiga, cravo da índia',
+    price: 2.0,
+    images: [
+      'https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&q=80',
+      'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',
+    ],
+    available: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: uuidv4(),
+    name: 'Cajuzinho Premium',
+    description:
+      'Docinho em formato de caju feito com amendoim torrado e chocolate ao leite. Uma combinação irresistível de sabores.',
+    ingredients: 'Amendoim torrado, leite condensado, chocolate ao leite, açúcar',
+    price: 2.8,
+    images: [
+      'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&q=80',
+      'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=800&q=80',
+    ],
+    available: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+];
 
 /**
  * @summary
